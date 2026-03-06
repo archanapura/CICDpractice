@@ -1,0 +1,11 @@
+{
+   "data":{ 
+           "Product":"Carrot",
+           "Country": "India"
+         },
+    "validations":{
+            "searchTitle":"GreenKart - veg and fruits kart"
+
+    }
+
+}

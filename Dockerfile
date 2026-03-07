@@ -16,4 +16,4 @@ COPY . .
 RUN npx playwright install chromium
 
 # Default command
-CMD ["npx", "playwright", "test", "--grep", "@webapp"]
+CMD ["npx", "playwright", "test", "--grep", @$TEST_SUITE]

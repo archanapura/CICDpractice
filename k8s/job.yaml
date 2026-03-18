@@ -1,14 +1,17 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: playwright-job
+  generateName: playwright-job-   # ✅ no fixed name
 spec:
   template:
+    metadata:
+      labels:
+        app: playwright           # ✅ required label
     spec:
       containers:
         - name: playwright
-          image: playwright-tests
-          imagePullPolicy: Never
+          image: your-dockerhub/playwright-tests:latest   # ✅ push image
+          imagePullPolicy: Always
           env:
             - name: TEST_SUITE
               value: "@api"

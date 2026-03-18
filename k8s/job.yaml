@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: playwright-job
+spec:
+  template:
+    spec:
+      containers:
+        - name: playwright
+          image: playwright-tests
+          imagePullPolicy: Never
+          env:
+            - name: TEST_SUITE
+              value: "@web"
+      restartPolicy: Never

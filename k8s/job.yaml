@@ -11,5 +11,5 @@ spec:
           imagePullPolicy: Never
           env:
             - name: TEST_SUITE
-              value: "@web"
+              value: "@api"
       restartPolicy: Never

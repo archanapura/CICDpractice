@@ -11,6 +11,6 @@ spec:
           image: archanapura/playwright-tests:latest
           env:
             - name: TEST_SUITE
-              value: "@web"
-          command: ["sh", "-c", "echo Running test && sleep 300"]
+              value: "@api"
+          command: ["sh", "-c", "npx playwright test --grep $TEST_SUITE"]
       restartPolicy: Never

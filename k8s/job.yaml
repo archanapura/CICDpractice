@@ -8,7 +8,7 @@ spec:
     spec:
       containers:
         - name: playwright
-          image: your-dockerhub/playwright-tests:latest
+          image: archanapura/playwright-tests:latest
           env:
             - name: TEST_SUITE
               value: "@web"

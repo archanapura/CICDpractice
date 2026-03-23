@@ -3,6 +3,7 @@ kind: Job
 metadata:
   name: playwright-job
 spec:
+  ttlSecondsAfterFinished: 300
   template:
     spec:
       containers:
@@ -11,5 +12,5 @@ spec:
           env:
             - name: TEST_SUITE
               value: "@web"
-          command: ["sh", "-c", "echo Running test && sleep 30"]
+          command: ["sh", "-c", "echo Running test && sleep 300"]
       restartPolicy: Never

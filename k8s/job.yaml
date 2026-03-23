@@ -1,16 +1,20 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  generateName: playwright-job-   # ✅ no fixed name
+  name: playwright-job
+  annotations:
+    argocd.argoproj.io/hook: Sync
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded
 spec:
+  backoffLimit: 0
   template:
     metadata:
       labels:
-        app: playwright           # ✅ required label
+        app: playwright
     spec:
       containers:
         - name: playwright
-          image: your-dockerhub/playwright-tests:latest   # ✅ push image
+          image: your-dockerhub/playwright-tests:latest
           imagePullPolicy: Always
           env:
             - name: TEST_SUITE

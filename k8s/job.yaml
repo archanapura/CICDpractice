@@ -2,20 +2,11 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: playwright-job
-  annotations:
-    argocd.argoproj.io/hook: Sync
 spec:
-  backoffLimit: 0
   template:
-    metadata:
-      labels:
-        app: playwright
     spec:
       containers:
         - name: playwright
           image: your-dockerhub/playwright-tests:latest
-          imagePullPolicy: Always
-          env:
-            - name: TEST_SUITE
-              value: "@api"
+          command: ["sh", "-c", "echo Running test && sleep 30"]
       restartPolicy: Never

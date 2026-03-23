@@ -6,6 +6,7 @@ spec:
   ttlSecondsAfterFinished: 300
   template:
     spec:
+      ttlSecondsAfterFinished: 60
       containers:
         - name: playwright
           image: archanapura/playwright-tests:latest

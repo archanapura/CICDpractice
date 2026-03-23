@@ -4,8 +4,6 @@ metadata:
   name: playwright-job
   annotations:
     argocd.argoproj.io/hook: Sync
-    # argocd.argoproj.io/hook-delete-policy: HookSucceeded
-    #testing auto sync
 spec:
   backoffLimit: 0
   template:
